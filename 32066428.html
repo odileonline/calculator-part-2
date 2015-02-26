@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Tutorial</title>
+<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+</head>
+<body>
+
+
+<form>
+Input 1:<br>
+<input type="text" id="input1" value=""/>
+
+<input type="button" id="squareNumber" value="squareNumber" onclick="squareNumber();" />
+
+<input type="button" id="percentOf" value="percentOf" />
+<br>
+Input 2:<br>
+<input type="text" id="input2">
+
+<input type="button" id="halfNumber" value="halfNumber" />
+
+<input type="button" id="areaOfCircle" value="areaOfCircle" />
+<br>
+Output:
+<input type="text" id="output">
+</form>
+
+
+
+
+
+
+<!-- Scripts -->
+<script src="scripts/jquery-1.11.2.min.js"></script>
+<script src="scripts/calculator.js"></script>
+<script type="text/javascript">
+    $("document").ready(function() {
+
+	    /*$("input:first").css("border", "3px solid red");
+	    $("#squareNumber").css("border", "3px solid red");
+	    $("#percentOf").css("border", "3px solid red");
+	    $("#output").css("border", "3px solid red");
+	    $("#input2").css("border", "3px solid red");*/
+	    //var num = $("input:first").val();
+	   	//console.log(num);
+
+		$("#squareNumber").on("click", function ()  {
+	   	var num = $("input:first").val();
+	   	var result = squareNumber(num);
+	   	var gotIt = $("#output").val(result);
+	   		//console.log(gotIt);
+	   
+	   	});
+ 
+	   	$("#percentOf").on("click", function () {
+	   	var num1 = $("input:first").val();
+	   	var num2 = $("#input2").val();
+	   	var result = percentOf(num1, num2);
+	   	var gotIt = $("#output").val(result);
+	   	console.log(result);
+
+	   	});
+
+	   	$("#halfNumber").on("click", function ()  {
+	   	var num = $("#input2").val();
+	   	var result = halfNumber(num);
+	   	var gotIt = $("#output").val(result);
+	   		//console.log(gotIt);
+	   
+	   	});
+
+	   	$("#areaOfCircle").on("click", function ()  {
+	   	var num = $("#input2").val();
+	   	var result = areaOfCircle(num);
+	   	var gotIt = $("#output").val(result);
+	   		//console.log(gotIt);
+	   
+	   	});
+
+ 	});
+
+
+    
+</script>
+</body>
+</html>
